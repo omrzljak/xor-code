@@ -29,5 +29,6 @@ public class App {
 	private static void usage() {
 		System.err.println("Wrong usage: XOREncoderDecoder");
 		System.err.println(String.format("XOREncoderDecoder <%s|%s> value", DECODE, ENCODE));
+		System.exit(1);
 	}
 }

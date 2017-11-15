@@ -8,17 +8,35 @@
   <packaging>jar</packaging>
 
   <name>xor-coding</name>
-  <url>http://maven.apache.org</url>
+  <url>http://osmanmrzljak.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+  <build>
+    <plugins>
+      <plugin>
+      	<version>2.4</version>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
 
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>com.osmanmrzljak.tools.xorcoding.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+
+      </plugin>
+    </plugins>
+  </build>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.12</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
