@@ -9,7 +9,7 @@ for securing passwords and other sensible content.
 ### build 
 ``` mvn clean install```
 ### run
-``` java -cp target/ com.osmanmrzljak.tools.xorcoding.App encode some_secrete```
+``` java -jar xor-coding-1.0.0.jar encode some_secrete```
 
 ## Alternative
 You can use online tool http://strelitzia.net/wasXORdecoder/wasXORdecoder.html , but be careful posting password online is never safe.
