@@ -1,6 +1,7 @@
 
 package com.osmanmrzljak.tools.xorcoding;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 /**
@@ -27,9 +28,9 @@ public class XOREncoderDecoder {
 		}
 
 		String base64 = substringAfter(encodeValue, XOR_PREFIX);
-		byte[] bytesXor = Base64.getDecoder().decode(base64.getBytes());
+		byte[] bytesXor = Base64.getDecoder().decode(base64.getBytes(StandardCharsets.ISO_8859_1));
 
-		return new String(xorBytes(bytesXor));
+		return new String(xorBytes(bytesXor), StandardCharsets.ISO_8859_1);
 	}
 
 	/**
@@ -73,9 +74,9 @@ public class XOREncoderDecoder {
 		if (isEmpty(decodedValue)) {
 			return null;
 		}
-		byte[] decodedBytes = decodedValue.getBytes();
+		byte[] decodedBytes = decodedValue.getBytes(StandardCharsets.ISO_8859_1);
 		byte[] encodedBytes = Base64.getEncoder().encode(xorBytes(decodedBytes));
-		return XOR_PREFIX + new String(encodedBytes);
+		return XOR_PREFIX + new String(encodedBytes, StandardCharsets.ISO_8859_1);
 	}
 
 	/**
